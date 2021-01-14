@@ -19,7 +19,7 @@ docker build -t opsdash-server .
 Run the container:
 
 ```bash
-docker run -d -p 8080:8080 -p 6273:6273 -p 6273:6273/udp opsdash-server
+docker run -d -p 8086:8086 -p 6273:6273 -p 6273:6273/udp opsdash-server
 ```
 
 ## Run with docker-compose
