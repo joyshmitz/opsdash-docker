@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:buster
 
 MAINTAINER Patrick Daether, http://github.com/pdaether
 
@@ -11,7 +11,7 @@ RUN cd /tmp && dpkg -i *.deb && rm *.deb
 COPY ./server.cfg /etc/opsdash/server.cfg
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-EXPOSE 8080
+EXPOSE 8086
 EXPOSE 6273
 EXPOSE 6273/udp
 
