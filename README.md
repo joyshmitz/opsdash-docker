@@ -18,7 +18,7 @@ Build the docker image:
 docker build -t opsdash-server .
 ```
 
-### Pull and Run the container from hub.docker.com:
+### Pull and Run the container from (https://hub.docker.com):
 
 ```bash
 docker run -d -p 8086:8086 -p 6273:6273 -p 6273:6273/udp joyshmitz/opsdash-server:latest
