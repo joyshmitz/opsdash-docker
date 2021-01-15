@@ -30,3 +30,4 @@ docker run -d -p 8086:8086 -p 6273:6273 -p 6273:6273/udp joyshmitz/opsdash-serve
 docker-compose -p opsdash-server build
 docker-compose -p opsdash-server up
 ```
+This is an unofficial image.
