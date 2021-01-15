@@ -5,10 +5,10 @@ This is a Dockefile to easily setup the [OpsDash](https://www.opsdash.com)-Serve
 ## Install & Setup
 
 - Create an account on [OpsDash](https://www.opsdash.com).
-- Login to OpsDash and download the current `.dep`-file for the server into the `dep`-directory (you can only download the file if you are logged in). At the time of writing this is `dep/opsdash-server_1.6_amd64.deb`.
+- Server into the `dep`-directory `dep/opsdash-server_1.12.2_amd64.deb`.
 - Change the config in `server.cfg` to your needs.
 
-## Run with docker
+### Build with docker
 
 Build the docker image:
 
@@ -16,13 +16,13 @@ Build the docker image:
 docker build -t opsdash-server .
 ```
 
-Run the container:
+### Pull and Run the container from hub.docker.com:
 
 ```bash
-docker run -d -p 8086:8086 -p 6273:6273 -p 6273:6273/udp opsdash-server
+docker run -d -p 8086:8086 -p 6273:6273 -p 6273:6273/udp joyshmitz/opsdash-server:latest
 ```
 
-## Run with docker-compose
+### Run with docker-compose
 
 ```
 docker-compose -p opsdash-server build
