@@ -6,7 +6,9 @@ This is a Dockefile to easily setup the [OpsDash](https://www.opsdash.com)-Serve
 
 - Create an account on [OpsDash](https://www.opsdash.com).
 - Server into the `dep`-directory `dep/opsdash-server_1.12.2_amd64.deb`.
-- Change the config in `server.cfg` to your needs.
+- Before starting the OpsDash server, you should edit the configuration file at /etc/opsdash/server.cfg, at least to review that the default settings are acceptable.
+- Agent downloah here https://packages.rapidloop.com/downloads/opsdash-agent_1.12.2_amd64.deb
+- Before the agent can be started, the agent configuration file at /etc/opsdash/agent.cfg, needs to be edited.
 
 ### Build with docker
 
@@ -22,9 +24,9 @@ docker build -t opsdash-server .
 docker run -d -p 8086:8086 -p 6273:6273 -p 6273:6273/udp joyshmitz/opsdash-server:latest
 ```
 
-### Run with docker-compose
+### Build & Run with docker-compose
 
-```
+```bash
 docker-compose -p opsdash-server build
 docker-compose -p opsdash-server up
 ```
