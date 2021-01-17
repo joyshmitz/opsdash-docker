@@ -5,26 +5,28 @@
 ## Установка и настройка
 
 - Создайте учетную запись на [OpsDash] (https://www.opsdash.com).
-- Войдите в OpsDash и загрузите текущий файл `.dep` для сервера в каталог` dep` (вы можете загрузить файл, только если вы вошли в систему). На момент написания это `dep / opsdash-server_1.2.2_amd64.deb`.
-- Измените конфигурацию в `server.cfg` под свои нужды.
+- Файл сервера в `dep`-каталог `dep/opsdash-server_1.12.2_amd64.deb`.
+- Перед запуском сервера OpsDash вы должны отредактировать файл конфигурации на /etc/opsdash/server.cfg, по крайней мере, чтобы убедиться, что настройки по умолчанию приемлемы.
+- Агент скачать здесь `https://packages.rapidloop.com/downloads/opsdash-agent_1.12.2_amd64.deb`
+- Перед запуском агента необходимо отредактировать файл конфигурации агента в `/etc/opsdash/agent.cfg`.
 
-## Запуск с докером
+## Создание и запуск в докере
 
 Создайте образ докера:
 
-Баш
+```bash
 docker build -t opsdash-server .
-``
+```
 
 Запускаем контейнер:
 
-Баш
+```bash
 docker run -d -p 8086:8086 -p 6273:6273 -p 6273:6273/udp opsdash-server
-``
+```
 
 ## Запуск с помощью docker-compose
 
-``
+```bash
 docker-compose -p opsdash-server build
 docker-compose -p opsdash-server up
-``
+```
